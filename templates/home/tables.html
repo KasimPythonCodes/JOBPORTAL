@@ -1,0 +1,288 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Resume  {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="container-fluid py-4">
+   
+    <div class="row">
+      <div class="col-12">
+    {% include 'home/messages.html' %}
+
+        <div class="card mb-4">
+          <div class="card-header card pb-0">
+            <h6>Post Data  
+              <form style="float:right;" action="{% url 'search' %}" method="get">
+              <div class="ms-md-auto ps-md-3 d-flex align-items-center">
+              <div class="bg-white border-radius-lg d-flex">
+                <input required type="search" name="query" id="search" class="form-control border-0 ps-3" placeholder="Type here...">
+               
+                <button class="btn bg-gradient-primary my-1 me-1">Search</button>
+              </div>
+            </div>
+    
+          </form>
+            
+            <!-- <a  href="{{show_resume.doc.url}}" download="{{show_resume.doc.url}}" style="float : right" ><button   type="button" class="btn-group btn-group-sm-1 px-3 btn-secondary text-light me-2">All Resume Download</button></a> -->
+          
+          </h6>
+          </div> 
+          <br>
+          <!-- <a href="/download/{{resume.id}}" target="_blank" download><button   type="button" class="btn-group btn-group-sm-1 px-3 btn-secondary text-light me-2">Download</button></a> -->
+          {% if show_resume %}
+
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-0">
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Sno.ID</th>
+
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">First Name</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7  ps-2">Last Name</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7  ps-2">Remote Type</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7  ps-2">Email ID</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7  ps-2">Job Profile</th>
+                    <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Phone Number</th>
+                    <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Work Experiance</th>
+                    <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Job Type</th>
+                    <!-- <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Document</th> -->
+                    <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Zipcode</th>
+                    <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Date</th>
+                    <th class=" text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center ">Action</th>
+                    <th class="text-secondary opacity-7"></th>
+                  </tr>
+                </thead>
+                <tbody>
+<!-- start mycode  -->
+
+
+
+<!-- end mycode -->
+
+                    
+                {% for resume in show_resume  %}
+                <tr class="">
+                   
+                  <td class="align-middle text-center text-sm">
+                    <div class="d-flex px-4 py-1">
+                      <div>
+
+                      <p class="text-xs font-weight-bold mb-0 text-center">{{resume.id}}</p>
+                      
+                      </div>
+                    </div>
+                  </td>
+
+
+
+                  <td class="align-middle  text-sm">
+                    <div class="d-flex px-4 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <p class="text-xs font-weight-bold mb-0 ">{{resume.first_name}}</p>
+                      </div>
+                    </div>
+                  </td>
+                 
+                  <td class="align-middle  text-sm">
+                    <div class="d-flex px-2 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <p class="text-xs font-weight-bold mb-0 ">{{resume.last_name}}</p>
+                      </div>
+                    </div>
+                  </td>
+
+
+                  <td class="align-middle  text-sm">
+                    <div class="d-flex px-2 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <p class="text-xs font-weight-bold mb-0 ">{{resume.remote_type}}</p>
+                      </div>
+                    </div>
+                  </td>
+                 
+
+                  <td class="align-middle  text-sm">
+                    <div class="d-flex px-0 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <p class="text-xs font-weight-bold mb-0 ">{{resume.email}}</p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="align-middle  text-sm">
+                    <div class="d-flex px-2 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <p class="text-xs font-weight-bold mb-0 ">{{resume.job_profile}}</p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="align-middle text-center text-sm">
+                    <div class="d-flex px-4 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <p class="text-xs font-weight-bold mb-0 text-center">{{resume.phone_number}}</p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="align-middle  text-sm">
+                    <div class="d-flex px-5 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <p class="text-xs font-weight-bold mb-0 text-center">{{resume.work_expriance}}</p>
+                      </div>
+                    </div>
+                  </td>
+                  
+                  
+                  <td class="align-middle  text-sm">
+                    <div class="d-flex px-3 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <p class="text-xs font-weight-bold mb-0 ">{{resume.job_type}}</p>
+                      </div>
+                    </div>
+                  </td>
+                 
+                  <td class="align-middle  text-sm">
+                    <div class="d-flex px-4 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <p class="text-xs font-weight-bold mb-0 ">{{resume.zipcode}}</p>
+                      </div>
+                    </div>
+                  </td>
+                 
+                  <td class="align-middle text-sm">
+                    <div class="d-flex px-3 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <p class="text-xs font-weight-bold mb-0 ">{{resume.updated_at}}</p>
+                      </div>
+                    </div>
+                  </td>
+                  
+
+                  {% if resume.doc %}
+                  <td class="align-middle text-sm">
+                    <div class="d-flex px-3 py-1">
+                      <div>
+                        <!-- <img src="/static/assets/img/team-3.jpg" class="avatar avatar-sm me-3"> -->
+                      <!-- <p class="text-xs font-weight-bold mb-0 ">{{resume.updated_at}}</p> -->
+
+                    <a href="{{resume.doc.url}}" target="_blank" ><button   type="button" class="btn-group btn-group-sm-1 px-3 btn-secondary text-light me-2">Download</button></a>
+                    {%else%}
+                  <h6>No PDF</h6>
+                  
+                  {%endif%} 
+
+                  {% if resume.doc %}
+                    
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <a href="/resume-resume-view-delete/{{resume.id}}"><button type="button" class="btn-group btn-group-sm-1 px-3 btn-warning text-light">Delete</button></a>
+                    
+                    {% endif %}
+
+
+                      </div>
+                    </div>
+                  </td>
+                
+                  
+  
+                 {% comment %}
+                   
+                  <td class="align-middle">
+                  <!-- <td class="align-middle text-center"> -->
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp; &nbsp;
+                  
+                    <a href="/download/{{resume.id}}" target="_blank" download><button   type="button" class="btn-group btn-group-sm-1 px-3 btn-secondary text-light me-2">Download</button></a>
+                    <!-- <a class="btn-group btn-group-sm-1 px-3 btn-secondary text-light me-2" href="{{resume.doc.url}}" download>Download</a> -->
+                    
+                    &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                   &nbsp;
+                  
+                    <a href="/resume-delete/{{resume.id}}"><button type="button" class="btn-group btn-group-sm-1 px-3 btn-secondary text-light">Delete</button></a>
+                
+
+                    <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      Edit
+                    </a>
+
+                    
+
+                  </td>
+                  {% endcomment %}
+
+
+                </tr>
+                {%endfor%}
+                
+                {%else%}
+                
+                <center>
+
+                <h3 class="display-3">Comming Soon..</h3>
+              </center>
+              
+              {% endif %}
+
+                </tbody>
+               
+              </table>
+              <br>
+              
+              
+          
+
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+   
+  
+    {% include "includes/footer.html" %}
+    
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+
+{% endblock javascripts %}

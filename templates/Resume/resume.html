@@ -1,0 +1,11 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- <input type="file" name="myfile" required /> -->
+    <!-- <input type="file"  accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf" />
+     -->
+     <input type="file" id="docpicker" name="myfile"
+     accept=".doc,.docx,.txt,.pdf" />
+     
+     <input type="submit" name="submit" value="Upload" />
+</form>
+
